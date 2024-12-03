@@ -2,6 +2,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import authRoutes from './routes/auth.route.js';
+import { dbConnect } from "./lib/db.js";
 
 dotenv.config();
 
@@ -14,5 +15,5 @@ app.use('/api/auth', authRoutes);
 
 app.listen(PORT, ()=> {
     console.log(`Server is listening at PORT ${PORT}`);
-    
+    dbConnect();
 })
